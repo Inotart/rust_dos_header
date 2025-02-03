@@ -1,0 +1,11 @@
+[package]
+name = "rust_dos_header"
+version = "0.1.0"
+edition = "2021"
+authors = ["Inotart"]
+description = "一个基于Rust实现的dos文件读取器,可读取exe,dll等文件的dos头信息"
+license = "MIT"
+repository = "https://github.com/Inotart/rust_dos_header.git"
+homepage = "https://github.com/Inotart/rust_dos_header.git"
+readme = "README.md"
+[dependencies]
