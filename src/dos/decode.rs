@@ -55,7 +55,7 @@ fn read_move_vec_u18_list_by_vec_u8(raw_date: &Vec<u8>, start: usize, len: usize
     return result;
 }
 
-pub fn decode_file(mut files: &File) -> Result<structs::DosHeader, Box<dyn std::error::Error>> {
+pub fn decode_file(files: &File) -> Result<structs::DosHeader, Box<dyn std::error::Error>> {
     let e_magic = read_u16_by_file(files);
     let e_cblp = read_u16_by_file(files);
     let e_cp = read_u16_by_file(files);
@@ -116,7 +116,7 @@ fn read_u16_by_file(mut files: &File) -> u16 {
     files.read_exact(&mut buffer).unwrap();
     return u16::from_le_bytes(buffer);
 }
-fn read_move_vec_u18_list_by_file(mut files: &File, len: usize) -> Vec<u16> {
+fn read_move_vec_u18_list_by_file(files: &File, len: usize) -> Vec<u16> {
     let mut result = Vec::new();
     for _ in 0..len {
         result.push(read_u16_by_file(files));
